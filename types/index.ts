@@ -8,4 +8,6 @@ export type PortfolioData = {
     linkedin: string;
     github: string;
   };
+  skills: string[];
+  languages: string[];
 };

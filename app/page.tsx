@@ -11,7 +11,7 @@ export default async function Home() {
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex w-full flex-row items-center justify-between bg-white dark:bg-black sm:items-start">
         <Sidebar data={portfolioData} />
-        <div className="bg-red-500 w-3/4">test</div>
+        <div className="w-3/4 min-h-screen">test</div>
       </main>
     </div>
   );

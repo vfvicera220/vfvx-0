@@ -2,15 +2,16 @@ import Image from "next/image";
 import { Section } from "./Section";
 import { PortfolioData } from "@/types";
 import { TfiEmail, TfiGithub, TfiLinkedin } from "react-icons/tfi";
+import { Pill } from "./Pill";
 
 type SidebarProps = {
   data: PortfolioData;
 };
 
 const socialIcons: Record<string, React.ReactNode> = {
-  email: <TfiEmail />,
-  linkedin: <TfiLinkedin />,
-  github: <TfiGithub />,
+  email: <TfiEmail color="#606060" />,
+  linkedin: <TfiLinkedin color="#606060" />,
+  github: <TfiGithub color="#606060" />,
 };
 
 export function Sidebar({ data }: SidebarProps) {
@@ -35,7 +36,7 @@ export function Sidebar({ data }: SidebarProps) {
           <p className="text-base text-white/80">{data.personal.description}</p>
         </Section>
         <Section title="Contact">
-          <div className="flex flex-col gap-2 ">
+          <div className="flex flex-col gap-2 pt-1">
             {Object.entries(data.contact).map(([key, value]) => (
               <div key={key} className="flex flex-row items-center gap-3">
                 {socialIcons[key]}
@@ -48,6 +49,20 @@ export function Sidebar({ data }: SidebarProps) {
                   {value}
                 </a>
               </div>
+            ))}
+          </div>
+        </Section>
+        <Section title="Skills">
+          <div className="flex flex-row flex-wrap gap-2 pt-1">
+            {data.skills.map((skill) => (
+              <Pill key={skill}>{skill}</Pill>
+            ))}
+          </div>
+        </Section>
+        <Section title="Languages">
+          <div className="flex flex-row flex-wrap gap-2 pt-1">
+            {data.languages.map((language) => (
+              <Pill key={language}>{language}</Pill>
             ))}
           </div>
         </Section>

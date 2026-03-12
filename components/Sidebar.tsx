@@ -15,7 +15,7 @@ const socialIcons: Record<string, React.ReactNode> = {
 
 export function Sidebar({ data }: SidebarProps) {
   return (
-    <div className={`w-1/4 min-h-screen p-5 pt-10 pl-10`}>
+    <div className={`w-1/4 min-h-screen p-5 pt-10 pl-10`} data-testid="sidebar">
       <div className="flex flex-col gap-5">
         <div>
           <Image src="/avatar.svg" alt="verified" width={64} height={64} />

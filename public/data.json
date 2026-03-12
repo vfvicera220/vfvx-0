@@ -7,5 +7,16 @@
     "email": "vfvicera220@gmail.com",
     "linkedin": "https://www.linkedin.com/in/kvicera",
     "github": "https://github.com/vfvicera220"
-  }
+  },
+  "skills": [
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "Docker",
+    "AWS"
+  ]
 }

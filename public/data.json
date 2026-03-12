@@ -18,5 +18,10 @@
     "PostgreSQL",
     "Docker",
     "AWS"
+  ],
+  "languages": [
+    "English",
+    "Filipino",
+    "Japanese"
   ]
 }

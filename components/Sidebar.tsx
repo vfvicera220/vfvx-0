@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Section } from "./Section";
 import { PortfolioData } from "@/types";
-import { TfiEmail, TfiGithub, TfiLinkedin } from "react-icons/tfi";
-import { FaUpwork } from "react-icons/fa6";
+import { TfiEmail } from "react-icons/tfi";
+import { FaSquareUpwork, FaGithub, FaLinkedin } from "react-icons/fa6";
 
 import { Pill } from "./Pill";
 
@@ -10,11 +10,11 @@ type SidebarProps = {
   data: PortfolioData;
 };
 
-const socialIcons: Record<string, React.ReactNode> = {
+export const socialIcons: Record<string, React.ReactNode> = {
   email: <TfiEmail color="#606060" />,
-  linkedin: <TfiLinkedin color="#606060" />,
-  github: <TfiGithub color="#606060" />,
-  upwork: <FaUpwork color="#606060" />,
+  linkedin: <FaLinkedin color="#606060" size={32} />,
+  github: <FaGithub color="#606060" size={32} />,
+  upwork: <FaSquareUpwork color="#606060" size={32} />,
 };
 
 const languageIcons: Record<string, string> = {
@@ -88,6 +88,19 @@ export function Sidebar({ data }: SidebarProps) {
             ))}
           </div>
         </Section>
+        <div className="flex flex-row gap-10 fixed bottom-0 pb-10">
+          {data.socials.map((social) => (
+            <a
+              key={social.platform}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid={social.platform.toLowerCase()}
+            >
+              {socialIcons[social.platform.toLowerCase()]}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

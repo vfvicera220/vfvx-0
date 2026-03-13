@@ -12,6 +12,7 @@ export function Pill({ key, children }: PillProps) {
     <div
       key={key}
       className="border text-sm rounded-full py-1 px-3 border-gray-900"
+      data-testid={key}
     >
       {children}
     </div>

@@ -17,6 +17,12 @@ const socialIcons: Record<string, React.ReactNode> = {
   upwork: <FaUpwork color="#606060" />,
 };
 
+const languageIcons: Record<string, string> = {
+  English: "/countries/united-states.svg",
+  Filipino: "/countries/philippines.svg",
+  Japanese: "/countries/japan.svg",
+};
+
 export function Sidebar({ data }: SidebarProps) {
   return (
     <div className={`w-1/4 min-h-screen p-5 pt-10 pl-10`} data-testid="sidebar">
@@ -65,7 +71,20 @@ export function Sidebar({ data }: SidebarProps) {
         <Section title="Languages">
           <div className="flex flex-row flex-wrap gap-2 pt-1">
             {data.languages.map((language) => (
-              <Pill key={language}>{language}</Pill>
+              <Pill key={language}>
+                <div className="flex flex-col">
+                  <div className="flex items-center">
+                    <Image
+                      src={languageIcons[language]}
+                      alt={language}
+                      width={16}
+                      height={16}
+                      className="mr-1"
+                    />
+                    {language}
+                  </div>
+                </div>
+              </Pill>
             ))}
           </div>
         </Section>

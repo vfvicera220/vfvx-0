@@ -10,7 +10,7 @@ type SectionProps = {
 export function Section({ title, children }: SectionProps) {
   return (
     <section className="flex flex-col">
-      <header className="text-sm font-semibold pb-1 text-[#606060] uppercase">
+      <header className="text-xs font-normal pb-1 text-[#606060] uppercase">
         {title}
       </header>
       <div className="flex-1">{children}</div>

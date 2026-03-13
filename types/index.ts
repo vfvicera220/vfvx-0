@@ -5,9 +5,11 @@ export type PortfolioData = {
   };
   contact: {
     email: string;
-    linkedin: string;
-    github: string;
   };
   skills: string[];
   languages: string[];
+  socials: {
+    platform: string;
+    url: string;
+  }[];
 };

@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Section } from "./Section";
 import { PortfolioData } from "@/types";
 import { TfiEmail, TfiGithub, TfiLinkedin } from "react-icons/tfi";
+import { FaUpwork } from "react-icons/fa6";
+
 import { Pill } from "./Pill";
 
 type SidebarProps = {
@@ -12,6 +14,7 @@ const socialIcons: Record<string, React.ReactNode> = {
   email: <TfiEmail color="#606060" />,
   linkedin: <TfiLinkedin color="#606060" />,
   github: <TfiGithub color="#606060" />,
+  upwork: <FaUpwork color="#606060" />,
 };
 
 export function Sidebar({ data }: SidebarProps) {
